@@ -14,7 +14,7 @@ def sms(pnumber,msg):
   addr = "http://textbelt.com/text"
   number = str(pnumber)
   message= str(msg)
-  r = requests.post(addr,data={'number' : number, 'message' = message})
+  r = requests.post(addr,data={'number' : number, 'message' : message})
   if r.status_code == 200:
     print("Message: " + msg + " sent to phone number: " + str(pnumber))
   else:

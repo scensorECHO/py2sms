@@ -15,10 +15,13 @@ def sms(pnumber,msg):
   number = str(pnumber)
   message= str(msg)
   r = requests.post(addr,data={'number' : number, 'message' : message})
-  if r.status_code == 200:
-    print("Message: " + msg + " sent to phone number: " + str(pnumber))
-  else:
-    print("Message: " + msg + " failed to send to phone number: " + str(pnumber))
+  if r.status_code != 204:
+		if r.json()["success"]:
+			print("Message: \"" + msg + "\" sent to phone number: " + str(pnumber))
+		else:
+			print("Message failed: "+str(r.json()["success"]))
+	else:
+		print("Status code 204: No content returned")
 
 # To send a text message call the function with
 # sms(phonenumber,'sending this text message')

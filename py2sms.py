@@ -19,7 +19,7 @@ def sms(pnumber,msg):
 		if r.json()["success"]:
 			print("Message: \"" + msg + "\" sent to phone number: " + str(pnumber))
 		else:
-			print("Message failed: "+str(r.json()["success"]))
+			print("Message failed: "+str(r.json()["message"]))
 	else:
 		print("Status code 204: No content returned")
 

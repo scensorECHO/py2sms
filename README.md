@@ -11,3 +11,7 @@ You will need to create a <b>free</b> account at eztexting.com, and add your use
 The script pulls this info to make requests to the RESTful API. 
 
 You are alotted a total of 500 messages per month with this service. 
+
+# API Documentation
+
+https://www.eztexting.com/developers/sms-api-documentation/rest

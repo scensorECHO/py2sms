@@ -20,12 +20,11 @@ def sms(pnumber,msg):
 	addr = "https://app.eztexting.com/sending/messages?format=json"
 	number = str(pnumber)
 	message= str(msg)
-	content = json.dumps([{
+	content = {
 		'User': cred[0].strip(), 
 		'Password': cred[1].strip(),
-		'PhoneNumbers': [number],
-		'Message' : message}],
-		separators=(',',':'))
+		'PhoneNumbers[]': number,
+		'Message': message}
 	pprint.pprint(content)
 	r = requests.post(addr,data=content)
 	if r.status_code != 204:

@@ -1,3 +1,6 @@
 import py2sms
 
-py2sms.sms('2484958891',"Hey this is a test")
+number = input("Phone number: ")
+message= input("Message Content: ")
+
+py2sms.sms(number,message)
